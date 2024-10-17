@@ -1,0 +1,128 @@
+.nordiccell__modal {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all .3s; }
+  .nordiccell__modal.open {
+    display: block; }
+  .nordiccell__modal_background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    transition: all .3s; }
+  .nordiccell__modal_dialog {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    opacity: 0;
+    transition: all .5s; }
+    .nordiccell__modal_dialog_header {
+      position: relative;
+      padding: 8px 16px;
+      font-size: 18px;
+      background-color: var(--color-accent-1);
+      color: #fff; }
+      .nordiccell__modal_dialog_header_title {
+        font-weight: 600; }
+      .nordiccell__modal_dialog_header_close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 42px;
+        height: 42px;
+        line-height: 38px;
+        text-align: center;
+        font-size: 42px;
+        cursor: pointer;
+        font-weight: 100; }
+    .nordiccell__modal_dialog_body {
+      overflow: auto;
+      height: calc( 100% - 46px);
+      padding: 20px 20px 0;
+      box-sizing: border-box; }
+      .nordiccell__modal_dialog_body_content {
+        max-width: 400px;
+        margin: 0 auto; }
+        .nordiccell__modal_dialog_body_content .alert {
+          position: initial;
+          top: initial;
+          right: initial;
+          width: inherit; }
+      .nordiccell__modal_dialog_body:after {
+        content: '';
+        display: flex;
+        width: 100%;
+        height: var(--spacing-2); }
+    @media (min-width: 1024px) and (max-height: 499px) {
+      .nordiccell__modal_dialog {
+        max-width: 50vw;
+        height: calc( 100vh - var(--spacing-2));
+        left: calc(50% - (50vw / 2)); } }
+    @media (min-width: 1024px) and (min-height: 500px) {
+      .nordiccell__modal_dialog {
+        max-width: 50vw;
+        min-height: calc( 80vh);
+        max-height: calc( 100vh - var(--spacing-2));
+        left: calc(50% - (50vw / 2)); } }
+
+body.modal-open .nordiccell__modal {
+  z-index: 100000; }
+  body.modal-open .nordiccell__modal_background {
+    opacity: .5; }
+  body.modal-open .nordiccell__modal_dialog {
+    opacity: 1; }
+    @media (min-width: 1024px) and (min-height: 500px) {
+      body.modal-open .nordiccell__modal_dialog {
+        height: 80vh;
+        top: calc(50% - ((80vh) / 2));
+        bottom: calc(50% - ((80vh) / 2)); } }
+
+.nordiccell__modal .form-group {
+  position: relative;
+  margin-bottom: var(--spacing-2); }
+  .nordiccell__modal .form-group .form-label {
+    margin-top: 1em; }
+    .nordiccell__modal .form-group .form-label.sr-only {
+      display: none; }
+    .nordiccell__modal .form-group .form-label .required {
+      color: #f00; }
+  .nordiccell__modal .form-group .form-control {
+    border: var(--light-border);
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    padding: 10px; }
+    .nordiccell__modal .form-group .form-control:hover {
+      background-color: var(--light-background-color); }
+    .nordiccell__modal .form-group .form-control:focus {
+      background-color: #FEEFB3; }
+    .nordiccell__modal .form-group .form-control:read-only {
+      cursor: not-allowed;
+      background: var(--light-background-color); }
+  .nordiccell__modal .form-group textarea.form-control {
+    min-height: 100px; }
+  .nordiccell__modal .form-group.inline {
+    display: inline-block; }
+
+.nordiccell__modal .form-btn {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1rem; }
+
+.nordiccell__modal .form-btn[type='submit'] {
+  background: var(--color-accent-1);
+  border-color: var(--color-accent-1);
+  color: #fff; }
